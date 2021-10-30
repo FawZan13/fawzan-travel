@@ -8,7 +8,7 @@ const NotFound = () => {
             <h2>Error 404:</h2>
             <img height="400px" src="https://i.ibb.co/VVpDQdM/404.jpg" alt="" />
             <div className="my-3">
-                <Link to="/"><Button variant="outline-danger">Go Back</Button></Link>
+                <Link to="/"><Button variant="outline-warning">Go Back</Button></Link>
             </div>
         </div>
     );
