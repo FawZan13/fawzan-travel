@@ -6,6 +6,9 @@ import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Subscribe from './Pages/Subscribe/Subscribe';
+import LearnMore from './Pages/LearnMore/LearnMore';
 
 function App() {
   return (
@@ -23,6 +26,12 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <PrivateRoute path="/subscribe">
+              <Subscribe></Subscribe>
+            </PrivateRoute>
+            <PrivateRoute path="/learnmore">
+              <LearnMore></LearnMore>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
