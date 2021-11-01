@@ -2,7 +2,7 @@ import React from 'react';
 
 const ManageAllOrders = () => {
     return (
-        <div>
+        <div className="text-white">
             <h2>Manage All Orders</h2>
         </div>
     );

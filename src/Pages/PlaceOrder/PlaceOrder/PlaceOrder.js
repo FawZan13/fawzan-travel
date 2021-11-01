@@ -2,14 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router';
 
 const PlaceOrder = () => {
+    const { id } = useParams();
     return (
-        <div>
-            {/* const {id} = useParams(); */}
-            return (
-            <div>
-                {/* <h2>this is booking: {id}</h2> */}
-            </div>
-            );
+
+        <div className="text-white">
+            <h2>this is booking: {id}</h2>
         </div>
     );
 };

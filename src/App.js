@@ -11,6 +11,10 @@ import Subscribe from './Pages/Subscribe/Subscribe';
 import LearnMore from './Pages/LearnMore/LearnMore';
 import AddService from './Pages/AddService/AddService';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder/PlaceOrder';
+import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
+import MyOrders from './Pages/MyOrders/MyOrders';
+
+
 
 function App() {
   return (
@@ -39,6 +43,12 @@ function App() {
             </PrivateRoute>
             <Route path="/addService">
               <AddService></AddService>
+            </Route>
+            <Route path="/myorders">
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path="/manageorders">
+              <ManageAllOrders></ManageAllOrders>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Update = () => {
     return (
-        <div id="update" className="d-flex mx-auto my-5">
+        <div id="update" className="d-flex my-5">
             <div className="col-lg-6 w-50">
                 <img height="400px" className="" src="https://i.ibb.co/YPqDw1r/tour-banner.jpg" alt="" />
             </div>

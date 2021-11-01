@@ -10,4 +10,4 @@
 * Subscribe to get latest updates through email
 
 ## Our Website:
-Please visit our website: [https://metallic-gym.firebaseapp.com/](https://metallic-gym.firebaseapp.com/)
+Please visit our website: [https://fawzan-travel.firebaseapp.com/](https://fawzan-travel.firebaseapp.com/)

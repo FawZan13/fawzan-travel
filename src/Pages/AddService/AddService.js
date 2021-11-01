@@ -24,7 +24,7 @@ const AddService = () => {
                 <textarea {...register("description")} placeholder="Description" />
                 <input type="number" {...register("id")} placeholder="Id" />
                 <input {...register("img")} placeholder="Image URL" />
-                <input type="submit" />
+                <input className="btn bg-danger" type="submit" />
             </form>
         </div>
     );
