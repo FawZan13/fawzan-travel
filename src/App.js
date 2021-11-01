@@ -10,10 +10,11 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Subscribe from './Pages/Subscribe/Subscribe';
 import LearnMore from './Pages/LearnMore/LearnMore';
 import AddService from './Pages/AddService/AddService';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-dark">
       <AuthProvider>
         <Router>
           <Header></Header>
@@ -27,6 +28,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <PrivateRoute path="/placeorder/:id">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
             <PrivateRoute path="/subscribe">
               <Subscribe></Subscribe>
             </PrivateRoute>
