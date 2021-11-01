@@ -4,10 +4,10 @@ import { useParams } from 'react-router';
 const PlaceOrder = () => {
     return (
         <div>
-            const {id} = useParams();
+            {/* const {id} = useParams(); */}
             return (
             <div>
-                <h2>this is booking: {id}</h2>
+                {/* <h2>this is booking: {id}</h2> */}
             </div>
             );
         </div>
