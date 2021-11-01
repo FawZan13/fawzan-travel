@@ -16,12 +16,16 @@ const Header = () => {
                         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#update">Subscribe</Nav.Link>
                         {user?.email ?
-                            <Button onClick={logOut} variant="danger">Logout</Button> &&
-                            <Navbar.Text>
-                                Signed in as: <a href="#login">{user?.displayName}</a>
-                            </Navbar.Text> :
+                            <div className="d-flex">
+                                <Button className="mx-3" onClick={logOut} variant="danger">Logout</Button>
+                                <Navbar.Text>
+                                    Signed in as: <a href="#login">{user?.displayName}</a>
+                                </Navbar.Text>
+                            </div>
+                            :
                             <Nav.Link as={Link} to="/login"><Button variant="danger">Login</Button></Nav.Link>
                         }
+
 
                     </Navbar.Collapse>
                 </Container>

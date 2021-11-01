@@ -9,6 +9,7 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Subscribe from './Pages/Subscribe/Subscribe';
 import LearnMore from './Pages/LearnMore/LearnMore';
+import AddService from './Pages/AddService/AddService';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
             <PrivateRoute path="/learnmore">
               <LearnMore></LearnMore>
             </PrivateRoute>
+            <Route path="/addService">
+              <AddService></AddService>
+            </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
