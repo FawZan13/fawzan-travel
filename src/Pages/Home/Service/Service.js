@@ -14,7 +14,7 @@ const Service = ({ service }) => {
                         <p>{description}</p>
                     </Card.Text>
                 </Card.Body>
-                <Link to={`/placeorder/${_id}`}><Button className="pb-2 mb-3" variant="outline-danger"><h4>Place Order</h4></Button></Link>
+                <Link to={`/placeorder/${_id}`}><Button className="pb-2 mb-3" variant="outline-danger"><h4>Book Now</h4></Button></Link>
             </Card>
         </Col>
     );
