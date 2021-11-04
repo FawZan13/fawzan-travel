@@ -3,7 +3,7 @@ import React from 'react';
 const LearnMore = () => {
     return (
         <div className="mt-5">
-            <div>
+            <div >
                 <img height="500px" src="https://i.ibb.co/M7q0WCh/christoph-schulz-w-J6xyh1-YMx-U-unsplash.jpg" alt="" />
             </div>
             <div className="text-center text-white my-5">

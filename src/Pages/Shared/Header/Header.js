@@ -8,19 +8,21 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <>
-            <Navbar className="py-4" bg="warning" variant="dark" sticky="top" collapseOnSelect expand="lg">
+            <Navbar style={{ margin: "0px" }} className="" bg="warning" variant="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">Fawzan Travel</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#update">Subscribe</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#about">About Us</Nav.Link>
+
                         {user?.email ?
 
                             <div className="d-flex">
                                 <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
-                                <Nav.Link as={Link} to="/myorders">My Orders</Nav.Link>
+                                <Nav.Link as={Link} to={`/mybookings/${user.email}`}>My Bookings</Nav.Link>
                                 <Nav.Link as={Link} to="/manageorders">Manage Orders</Nav.Link>
                                 <Button className="mx-3" onClick={logOut} variant="danger">Logout</Button>
                                 <Navbar.Text>
