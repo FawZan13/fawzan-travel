@@ -30,7 +30,16 @@ const Book = () => {
     const onSubmit = (data) => {
         data.email = email;
         console.log(data);
-    }
+        fetch("https://dry-forest-48839.herokuapp.com/mybookings", {
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data),
+
+        })
+            .then((res) => res.json())
+            .then((result) => console.log(result));
+        console.log(data);
+    };
     return (
 
         <div>
