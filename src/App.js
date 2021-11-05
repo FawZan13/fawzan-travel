@@ -20,6 +20,7 @@ import Services from './Pages/Home/Services/Services';
 function App() {
   return (
     <div className="App ">
+
       <AuthProvider>
         <Router>
           <Header></Header>

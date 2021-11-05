@@ -1,23 +1,36 @@
-import { getAuth } from '@firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { Button, Card, Col, Row } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth';
 
 const MyBookings = () => {
-    const [bookings, setBookings] = useState([])
-    const { user } = getAuth();
+    const [bookings, setBookings] = useState([]);
+    const [control, setControl] = useState(false);
+    const { user } = useAuth();
 
-    const { email } = useParams();
-    // const email = user?.email;
+    const email = user.email;
     useEffect(() => {
         fetch(`https://dry-forest-48839.herokuapp.com/mybookings/${email}`)
             .then(res => res.json())
-            .then(data => setBookings(Object.values(data)));
-    }, [email]);
+            .then(data => setBookings(data));
+    }, [control]);
     console.log(bookings);
+    const handleDelete = (id) => {
+        fetch(`https://dry-forest-48839.herokuapp.com/deleteBooking/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.deletedCount) {
+                    setControl(!control);
+                }
+
+            });
+
+    };
     return (
         <div className="text-white">
-            <h2>My Bookings {bookings.length}</h2>
+            <h2 className="mt-5">My Bookings {bookings.length}</h2>
             {/* <h2>{bookings[0].name}</h2> */}
             <Row xs={1} md={3} className="text-center ">
                 {
@@ -31,23 +44,11 @@ const MyBookings = () => {
                                         <p>{booking.description}</p>
                                     </Card.Text>
                                 </Card.Body>
-                                <h5 className="text-white">{booking.status}</h5>
+                                <Button onClick={() => handleDelete(booking?._id)} variant="danger">Cancel</Button>
                             </Card>
                         </Col>
                     ))
                 }
-                {/* <Col className="my-5 px-5 text-center text-white">
-                    <Card border="dark" className="bg-warning" style={{ width: '20rem' }}>
-                        <Card.Img style={{ height: '200px' }} variant="top" src={bookings.img} />
-                        <Card.Body>
-                            <Card.Title><h3>{bookings.name}</h3></Card.Title>
-                            <Card.Text>
-                                <p>{bookings.description}</p>
-                            </Card.Text>
-                        </Card.Body>
-
-                    </Card>
-                </Col> */}
             </Row>
         </div>
     );

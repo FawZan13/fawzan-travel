@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
@@ -10,16 +10,17 @@ const Book = () => {
     const { user } = useAuth();
     const email = user.email;
     const [service, setService] = useState({})
-    const handleAddToBookings = () => {
-        service.email = user.email;
-        // service.status = "pending";
-        fetch("https://dry-forest-48839.herokuapp.com/mybookings", {
-            method: "POST",
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(service),
+    // const handleAddToBookings = () => {
+    //     service.email = user.email;
 
-        })
-    }
+    //     // service.status = "pending";
+    //     fetch("https://dry-forest-48839.herokuapp.com/mybookings", {
+    //         method: "POST",
+    //         headers: { 'content-type': 'application/json' },
+    //         body: JSON.stringify(service),
+
+    //     })
+    // }
 
     useEffect(() => {
         fetch(`https://dry-forest-48839.herokuapp.com/services/${id}`)
@@ -28,7 +29,10 @@ const Book = () => {
     }, [])
 
     const onSubmit = (data) => {
+        data.name = service.name;
         data.email = email;
+        data.img = service.img;
+        data.descripton = service.description;
         console.log(data);
         fetch("https://dry-forest-48839.herokuapp.com/mybookings", {
             method: "POST",
@@ -48,8 +52,8 @@ const Book = () => {
                 <div className="col-md-6 my-5 border border-danger bg-white">
                     <h3 className="m-3">Booking Form</h3>
                     <form className="m-5" onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("name", { required: true, maxLength: 20 })}
-                            placeholder="Name" className="p-2 m-3 mx-2 w-100" />
+                        <input {...register("date", { required: true })}
+                            type="date" className="p-2 m-3 mx-2 w-100" />
                         <input type="number" {...register("number")} placeholder="Your Number" className="p-2 m-3 mx-2 w-100" />
                         <input className="btn bg-danger" type="submit" />
                     </form>

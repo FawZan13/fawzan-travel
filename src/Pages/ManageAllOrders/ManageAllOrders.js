@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
 const ManageAllOrders = () => {
-    const [services, setServices] = useState([])
+    const [services, setServices] = useState([]);
+
     useEffect(() => {
         fetch('https://dry-forest-48839.herokuapp.com/services')
             .then(res => res.json())
