@@ -4,7 +4,6 @@ import { Button, Card, Col, Row } from 'react-bootstrap';
 const ManageAllOrders = () => {
     const [bookings, setBookings] = useState([]);
     const [control, setControl] = useState(false);
-    const [status, setStatus] = useState("");
 
     useEffect(() => {
         fetch('https://dry-forest-48839.herokuapp.com/allBookings')
@@ -13,10 +12,22 @@ const ManageAllOrders = () => {
     }, [control]);
 
     const updateStatus = (id) => {
-        const find = bookings.find(booking => booking._id == id);
+        const find = bookings.find(booking => booking._id === id);
         find.status = "approved";
-        // find.status = "approved";
+        const status = find.status;
+
+
         console.log(find);
+        fetch(`http://dry-forest-48839.herokuapp.com/updateStatus/${id}`, {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ status }),
+        })
+            .then((res) => res.json())
+            .then((result) => {
+
+                document.getElementById('status').innerHTML = result.status;
+            });
 
     }
 
@@ -52,7 +63,7 @@ const ManageAllOrders = () => {
                                             {booking.description}
                                         </Card.Text>
                                         <h6>Booked by:<br /><span>{booking.email}</span></h6>
-                                        <h5><span>{booking.status}</span></h5>
+                                        <h5><span id="status">{booking.status}</span></h5>
                                     </Card.Body>
                                     <Button onClick={() => updateStatus(booking?._id)} variant="success">Update</Button>
                                     <Button onClick={() => handleDelete(booking?._id)} variant="danger">Cancel</Button>

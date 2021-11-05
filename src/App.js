@@ -11,7 +11,7 @@ import Subscribe from './Pages/Subscribe/Subscribe';
 import LearnMore from './Pages/LearnMore/LearnMore';
 import AddService from './Pages/AddService/AddService';
 import Book from './Pages/Book/Book/Book';
-import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
+import ManageBookings from './Pages/ManageBookings/ManageBookings';
 import MyBookings from './Pages/MyBookings/MyBookings';
 import Services from './Pages/Home/Services/Services';
 
@@ -52,8 +52,8 @@ function App() {
             <PrivateRoute path="/mybookings/:email">
               <MyBookings></MyBookings>
             </PrivateRoute>
-            <PrivateRoute path="/manageorders">
-              <ManageAllOrders></ManageAllOrders>
+            <PrivateRoute path="/managebookings">
+              <ManageBookings></ManageBookings>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>

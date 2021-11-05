@@ -13,7 +13,7 @@ const Update = () => {
                 <h3 className="my-3">Want to get updates abour our<br />
                     latest travel programs? Please<br />
                     subscribe now.</h3>
-                <Link to="../../Subscribe/Subscribe.js"><Button className="my-3" variant="outline-warning">Subscribe</Button></Link>
+                <Link to="../../Subscribe/Subscribe.js"><Button className="my-3" variant="outline-success">Subscribe</Button></Link>
             </div>
         </div>
     );

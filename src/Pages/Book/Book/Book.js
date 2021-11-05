@@ -56,7 +56,7 @@ const Book = () => {
                         <Card.Body>
                             <Card.Title><h3>{service.name}</h3></Card.Title>
                             <Card.Text>
-                                <p>{service.description}</p>
+                                {service.description}
                             </Card.Text>
                         </Card.Body>
 
