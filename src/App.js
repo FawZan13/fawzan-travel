@@ -46,15 +46,15 @@ function App() {
             <PrivateRoute path="/learnmore">
               <LearnMore></LearnMore>
             </PrivateRoute>
-            <Route path="/addService">
+            <PrivateRoute path="/addService">
               <AddService></AddService>
-            </Route>
-            <Route path="/mybookings/:email">
+            </PrivateRoute>
+            <PrivateRoute path="/mybookings/:email">
               <MyBookings></MyBookings>
-            </Route>
-            <Route path="/manageorders">
+            </PrivateRoute>
+            <PrivateRoute path="/manageorders">
               <ManageAllOrders></ManageAllOrders>
-            </Route>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

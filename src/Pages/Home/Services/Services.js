@@ -10,7 +10,7 @@ const Services = () => {
             .then(data => setServices(data));
     }, [])
     return (
-        <div id="services" className="">
+        <div id="services" className="mx-3">
             <h2 className="text-center my-5 text-white">Our Services</h2>
             {services.length === 0 ?
                 <Spinner animation="border" variant="warning" />

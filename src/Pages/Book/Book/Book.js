@@ -9,18 +9,7 @@ const Book = () => {
     const { id } = useParams();
     const { user } = useAuth();
     const email = user.email;
-    const [service, setService] = useState({})
-    // const handleAddToBookings = () => {
-    //     service.email = user.email;
-
-    //     // service.status = "pending";
-    //     fetch("https://dry-forest-48839.herokuapp.com/mybookings", {
-    //         method: "POST",
-    //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify(service),
-
-    //     })
-    // }
+    const [service, setService] = useState({});
 
     useEffect(() => {
         fetch(`https://dry-forest-48839.herokuapp.com/services/${id}`)
@@ -29,10 +18,11 @@ const Book = () => {
     }, [])
 
     const onSubmit = (data) => {
+        data.status = "pending";
         data.name = service.name;
         data.email = email;
         data.img = service.img;
-        data.descripton = service.description;
+        data.description = service.description;
         console.log(data);
         fetch("https://dry-forest-48839.herokuapp.com/mybookings", {
             method: "POST",
@@ -54,6 +44,8 @@ const Book = () => {
                     <form className="m-5" onSubmit={handleSubmit(onSubmit)}>
                         <input {...register("date", { required: true })}
                             type="date" className="p-2 m-3 mx-2 w-100" />
+                        <input {...register("address", { required: true })}
+                            type="name" placeholder="Your Address" className="p-2 m-3 mx-2 w-100" />
                         <input type="number" {...register("number")} placeholder="Your Number" className="p-2 m-3 mx-2 w-100" />
                         <input className="btn bg-danger" type="submit" />
                     </form>
@@ -69,11 +61,6 @@ const Book = () => {
                         </Card.Body>
 
                     </Card>
-                    {/* <h2>Booking Id: {id}</h2>
-                    <img height="400px" src={service.img} alt="" />
-                    <h4>Details of {service.name}</h4>
-                    <h5>{service.description}</h5>
-                    <Button onClick={handleAddToBookings} className="pb-2 mb-3" variant="outline-danger"><h4>Book Now</h4></Button> */}
                 </div>
 
             </div>

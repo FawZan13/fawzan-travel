@@ -15,6 +15,7 @@ const MyBookings = () => {
     }, [control]);
 
     const handleDelete = (id) => {
+        alert('Do you want to delete this item?');
         fetch(`https://dry-forest-48839.herokuapp.com/deleteBooking/${id}`, {
             method: 'DELETE',
         })
@@ -29,7 +30,8 @@ const MyBookings = () => {
     return (
         <div className="text-white">
             <h2 className="mt-5">My Bookings {bookings.length}</h2>
-            {/* <h2>{bookings[0].name}</h2> */}
+            <h3>{user?.displayName}</h3>
+            <span>{email}</span>
             <Row xs={1} md={3} className="text-center ">
                 {
                     bookings.map(booking => (
@@ -39,7 +41,7 @@ const MyBookings = () => {
                                 <Card.Body>
                                     <Card.Title><h3>{booking.name}</h3></Card.Title>
                                     <Card.Text>
-                                        <p>{booking.description}</p>
+                                        {booking.description}
                                     </Card.Text>
                                 </Card.Body>
                                 <Button onClick={() => handleDelete(booking?._id)} variant="danger">Cancel</Button>
