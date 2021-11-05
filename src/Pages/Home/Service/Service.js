@@ -12,7 +12,7 @@ const Service = ({ service }) => {
                 <Card.Body>
                     <Card.Title><h3>{name}</h3></Card.Title>
                     <Card.Text>
-                        <p>{description}</p>
+                        {description}
                     </Card.Text>
                 </Card.Body>
                 <Link to={`/book/${_id}`}><Button className="pb-2 mb-3" variant="outline-danger"><h4>Book Now</h4></Button></Link>

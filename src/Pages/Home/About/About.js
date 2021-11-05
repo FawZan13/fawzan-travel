@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
-        <div id="about" className="d-flex ">
-            <div className="col-lg-6 col-sm-12 w-50 text-center  pt-3 mt-3 text-white">
+        <div id="about" className="d-flex row">
+            <div className="col-lg-6 col-sm-12 text-center  pt-3 mt-3 text-white bg-warning">
                 <h2 className="my-2">About Us</h2>
                 <h3 className="my-3">Want to learn more about us?<br />
                     Click the button below for more<br />
