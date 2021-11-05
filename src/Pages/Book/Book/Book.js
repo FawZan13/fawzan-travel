@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 
 const Book = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const { id } = useParams();
     const { user } = useAuth();
     const email = user.email;
