@@ -5,7 +5,6 @@ import Login from './Pages/Login/Login/Login';
 import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
-import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Subscribe from './Pages/Subscribe/Subscribe';
 import LearnMore from './Pages/LearnMore/LearnMore';
@@ -14,6 +13,7 @@ import Book from './Pages/Book/Book/Book';
 import ManageBookings from './Pages/ManageBookings/ManageBookings';
 import MyBookings from './Pages/MyBookings/MyBookings';
 import Services from './Pages/Home/Services/Services';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 
 

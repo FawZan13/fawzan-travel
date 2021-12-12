@@ -9,20 +9,21 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const signInUsingGoogle = () => {
+    const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
-        return signInWithPopup(auth, googleProvider)
+        signInWithPopup(auth, googleProvider)
             .then(result => {
-                setUser(result.user)
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
             })
             .finally(() => setIsLoading(false));
     }
     //observe user state change
     useEffect(() => {
-        const unsubscribed = onAuthStateChanged(auth, user => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setUser(user)
+                setUser(user);
             }
             else {
                 setUser({})
@@ -30,7 +31,7 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, [])
+    }, [auth])
 
     const logOut = () => {
         setIsLoading(true);
@@ -42,7 +43,7 @@ const useFirebase = () => {
     return {
         user,
         isLoading,
-        signInUsingGoogle,
+        signInWithGoogle,
         logOut
     }
 }

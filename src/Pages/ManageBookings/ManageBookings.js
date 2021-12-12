@@ -13,20 +13,16 @@ const ManageAllOrders = () => {
 
     const updateStatus = (id) => {
         const find = bookings.find(booking => booking._id === id);
-        find.status = "approved";
-        const status = find.status;
 
 
-        console.log(find);
+        // console.log(find);
         fetch(`http://dry-forest-48839.herokuapp.com/updateStatus/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ status }),
+            body: JSON.stringify(find),
         })
             .then((res) => res.json())
             .then((result) => {
-
-                document.getElementById('status').innerHTML = result.status;
             });
 
     }
