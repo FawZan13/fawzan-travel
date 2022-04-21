@@ -37,22 +37,22 @@ const Book = () => {
     return (
 
         <div>
-            <h2 className="text-white text-center">This is Booking</h2>
+            <h2 className="my-3 text-center">This is Booking</h2>
             <div className=" row container">
-                <div className="col-md-6 my-5 border border-danger bg-white">
-                    <h3 className="m-3">Booking Form</h3>
+                <div className="col-md-6 col-sm-12 col-lg-6 my-5 border border-primary bg-white">
+                    <h3 className="m-3 text-center">Booking Form</h3>
                     <form className="m-5" onSubmit={handleSubmit(onSubmit)}>
                         <input {...register("date", { required: true })}
                             type="date" className="p-2 m-3 mx-2 w-100" />
                         <input {...register("address", { required: true })}
                             type="name" placeholder="Your Address" className="p-2 m-3 mx-2 w-100" />
                         <input type="number" {...register("number")} placeholder="Your Number" className="p-2 m-3 mx-2 w-100" />
-                        <input className="btn bg-danger" type="submit" />
+                        <input className="btn bg-danger " type="submit" />
                     </form>
                 </div>
-                <div className="col-md-6 my-5 px-5 text-white ">
-                    <Card border="dark" className="bg-warning mx-5 w-100" style={{ width: '20rem' }}>
-                        <Card.Img style={{ height: '200px' }} variant="top" src={service.img} />
+                <div className="col-md-6 col-sm-12 col-lg-6 my-5 px-5 ">
+                    <Card className="shadow-lg mx-5 w-100" style={{ width: '20rem' }}>
+                        <Card.Img style={{ height: '300px' }} variant="top" src={service.img} />
                         <Card.Body>
                             <Card.Title><h3>{service.name}</h3></Card.Title>
                             <Card.Text>

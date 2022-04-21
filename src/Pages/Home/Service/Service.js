@@ -6,16 +6,16 @@ const Service = ({ service }) => {
     const { _id, name, description, img } = service;
 
     return (
-        <Col className="my-5 px-5 text-center text-white">
-            <Card border="dark" className="bg-warning" style={{ width: '20rem' }}>
-                <Card.Img style={{ height: '200px' }} variant="top" src={img} />
+        <Col data-aos="fade-up" className=" text-center my-3">
+            <Card border="" className="h-100 shadow-lg p-3" style={{ width: '20rem' }}>
+                <Card.Img height="220" variant="top" src={img} />
                 <Card.Body>
                     <Card.Title><h3>{name}</h3></Card.Title>
                     <Card.Text>
                         {description}
                     </Card.Text>
                 </Card.Body>
-                <Link to={`/book/${_id}`}><Button className="pb-2 mb-3" variant="outline-danger"><h4>Book Now</h4></Button></Link>
+                <Link to={`/book/${_id}`}><Button className=" mb-3" variant="outline-danger">Book Now</Button></Link>
             </Card>
         </Col>
     );

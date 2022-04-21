@@ -47,13 +47,13 @@ const ManageAllOrders = () => {
         <div className="text-white">
             <h2>Manage All Orders</h2>
             {
-                <Row xs={1} md={3} className=" ">
+                <Row className=" ">
                     {
                         bookings.map(booking => (
-                            <Col key={booking._id} className="my-5 px-5 text-center text-white">
-                                <Card border="dark" className="bg-warning" style={{ width: '20rem' }}>
+                            <Col sm={12} md={6} lg={4} key={booking._id} className="my-5 px-5 text-center text-white">
+                                <Card className="shadow-lg" style={{ width: '20rem' }}>
                                     <Card.Img style={{ height: '200px' }} variant="top" src={booking.img} />
-                                    <Card.Body>
+                                    <Card.Body style={{ color: "black", height: "250px" }}>
                                         <Card.Title><h3>{booking.name}</h3></Card.Title>
                                         <Card.Text>
                                             {booking.description}
@@ -61,8 +61,10 @@ const ManageAllOrders = () => {
                                         <h6>Booked by:<br /><span>{booking.email}</span></h6>
                                         <h5><span id="status">{booking.status}</span></h5>
                                     </Card.Body>
-                                    <Button onClick={() => updateStatus(booking?._id)} variant="success">Update</Button>
-                                    <Button onClick={() => handleDelete(booking?._id)} variant="danger">Cancel</Button>
+                                    <div className="mb-4">
+                                        <Button className="mx-2" onClick={() => updateStatus(booking?._id)} variant="outline-success">Update</Button>
+                                        <Button className="mx-2" onClick={() => handleDelete(booking?._id)} variant="outline-danger">Cancel</Button>
+                                    </div>
                                 </Card>
                             </Col>
                         ))

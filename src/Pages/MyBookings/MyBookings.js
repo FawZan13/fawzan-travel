@@ -32,19 +32,19 @@ const MyBookings = () => {
             <h2 className="mt-5">My Bookings {bookings.length}</h2>
             <h3>{user?.displayName}</h3>
             <span>{email}</span>
-            <Row xs={1} md={3} className="text-center ">
+            <Row className="text-center ">
                 {
                     bookings.map(booking => (
-                        <Col key={booking._id} className="my-5 px-5 text-center text-white">
-                            <Card border="dark" className="bg-warning" style={{ width: '20rem' }}>
+                        <Col sm={12} md={6} lg={4} key={booking._id} className="my-5 px-5 text-center">
+                            <Card border="dark" className="shadow-lg" style={{ width: '20rem' }}>
                                 <Card.Img style={{ height: '200px' }} variant="top" src={booking.img} />
-                                <Card.Body>
+                                <Card.Body style={{ height: "180px", color: "black" }}>
                                     <Card.Title><h3>{booking.name}</h3></Card.Title>
                                     <Card.Text>
                                         {booking.description}
                                     </Card.Text>
                                 </Card.Body>
-                                <Button onClick={() => handleDelete(booking?._id)} variant="danger">Cancel</Button>
+                                <Button onClick={() => handleDelete(booking?._id)} variant="primary">Cancel</Button>
                             </Card>
                         </Col>
                     ))

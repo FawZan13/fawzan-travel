@@ -4,10 +4,10 @@ import React from 'react';
 const Subscribe = () => {
     return (
         <div className="mt-5">
-            <div>
+            <div className="text-center">
                 <img height="500px" src="https://i.ibb.co/NCVdLj4/Reed-blog-post-image.jpg" alt="" />
             </div>
-            <div className="bg-dark mx-5 px-5 text-white py-5 my-5">
+            <div className="text-center my-5">
                 <h1>Thanks for</h1>
                 <h1>Subscribing</h1>
             </div>

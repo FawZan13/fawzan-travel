@@ -15,8 +15,8 @@ const AddService = () => {
             })
     }
     return (
-        <div className="add-service">
-            <h2>Add a service</h2>
+        <div className="add-service mt-4">
+            <h2 className="text-center">Add a service</h2>
             <form className="row mx-5 px-5" onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name", { required: true, maxLength: 20 })}
                     className=" mx-auto p-1 my-2" placeholder="Name" />

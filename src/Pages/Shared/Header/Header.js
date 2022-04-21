@@ -8,15 +8,15 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <>
-            <Navbar style={{ margin: "0px" }} className="" bg="warning" variant="dark" sticky="top" collapseOnSelect expand="lg">
+            <Navbar style={{ margin: "0px" }} className="" bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">Fawzan Travel</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                         <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#update">Subscribe</Nav.Link>
-                        <Nav.Link as={HashLink} to="/home#about">About Us</Nav.Link>
+                        {/* <Nav.Link as={HashLink} to="/home#update">Subscribe</Nav.Link>
+                        <Nav.Link as={HashLink} to="/home#about">About Us</Nav.Link> */}
 
                         {user?.email ?
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
@@ -15,9 +15,12 @@ const Login = () => {
         // })
     }
     return (
-        <div className="my-5 bg-warning py-3 mx-5">
-            <h2 className="my-5 text-white">Please Login</h2>
-            <Button variant="danger" className="my-4 mb-5 px-5 py-2" onClick={handleGoogleSignIn}>Login</Button>
+        <div className=" text-center">
+            <Container>
+                <img height="330px" className="" src="https://i.ibb.co/PQBLW2j/Tablet-login-bro.png" alt="" />
+                <h2 className="">Please Login</h2>
+                <Button variant="danger" className=" mb-5 px-5 py-2" onClick={handleGoogleSignIn}>Login</Button>
+            </Container>
         </div>
     );
 };

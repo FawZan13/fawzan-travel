@@ -1,11 +1,12 @@
-body{
+body {
   margin: 0px;
-  padding:0px;
-  background-color: black;
+  padding: 0px;
+  ;
 }
+
 .App {
   text-align: center;
-  padding:0px;
+  padding: 0px;
   margin: 0px;
 }
 
@@ -39,6 +40,7 @@ body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
