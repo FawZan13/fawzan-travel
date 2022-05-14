@@ -10,22 +10,26 @@ const Services = () => {
             .then(data => setServices(data));
     }, [])
     return (
-        <div id="services" className="py-5">
+
+        <section id="services" className="">
             <Container>
                 <h2 className="text-center my-5 text-white">Our Services</h2>
                 {services.length === 0 ?
                     <Spinner animation="border" variant="warning" />
                     :
-                    <Row xs={1} md={2} lg={3} className=" g-4">
+
+                    <Row xs={1} md={2} lg={3} className="g-4 p-4 p-md-0" >
                         {
                             services.map(service => <Service key={service.id} service={service}></Service>)
                         }
+
                     </Row>
+
 
                 }
             </Container>
 
-        </div>
+        </section>
     );
 };
 

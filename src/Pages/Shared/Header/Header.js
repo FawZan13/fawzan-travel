@@ -20,15 +20,15 @@ const Header = () => {
 
                         {user?.email ?
 
-                            <div className="d-flex">
+                            <>
                                 <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
                                 <Nav.Link as={Link} to={`/mybookings/${user.email}`}>My Bookings</Nav.Link>
                                 <Nav.Link as={Link} to="/managebookings">Manage Bookings</Nav.Link>
                                 <Button className="mx-3" onClick={logOut} variant="danger">Logout</Button>
                                 <Navbar.Text>
-                                    Signed in as: <a href="#login">{user?.displayName}</a>
+                                    <a href="#login">{user?.displayName}</a>
                                 </Navbar.Text>
-                            </div>
+                            </>
                             :
                             <Nav.Link as={Link} to="/login"><Button variant="danger">Login</Button></Nav.Link>
                         }

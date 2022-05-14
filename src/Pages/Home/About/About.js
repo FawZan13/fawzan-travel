@@ -8,15 +8,19 @@ const About = () => {
             <Container>
                 <Row id="about" className="justify-content-center align-items-center">
                     <Col data-aos="fade-right" sm={12} md={6} lg={6} className="">
-                        <h2 className="my-2">About Us</h2>
-                        <h3 className="my-3">Want to learn more about us?<br />
-                            Click the button below for more<br />
-                            information</h3>
-                        <Link to="../../LearnMore/LearnMore.js"><Button className="my-3" variant="outline-success">Learn More</Button></Link>
+                        <Container>
+                            <h2 className="my-2">About Us</h2>
+                            <h3 className="my-3">Want to learn more about us?<br />
+                                Click the button below for more<br />
+                                information</h3>
+                            <Link to="../../LearnMore/LearnMore.js"><Button className="my-3" variant="outline-success">Learn More</Button></Link>
+                        </Container>
 
                     </Col>
                     <Col data-aos="fade-left" sm={12} md={6} lg={6} className="  ">
-                        <img height="" className="w-100" src="https://i.ibb.co/1QhvJ3b/tour-learn.jpg" alt="" />
+                        <Container>
+                            <img height="" className="w-100" src="https://i.ibb.co/1QhvJ3b/tour-learn.jpg" alt="" />
+                        </Container>
                     </Col>
                 </Row>
             </Container>

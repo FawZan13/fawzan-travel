@@ -7,7 +7,7 @@ const Service = ({ service }) => {
 
     return (
         <Col data-aos="fade-up" className=" text-center my-3">
-            <Card border="" className="h-100 shadow-lg p-3" style={{ width: '20rem' }}>
+            <Card border="" className="h-100 shadow-lg" style={{ width: '' }}>
                 <Card.Img height="220" variant="top" src={img} />
                 <Card.Body>
                     <Card.Title><h3>{name}</h3></Card.Title>
